@@ -8,5 +8,5 @@
     };
 
     toast.querySelector('[data-toast-close]')?.addEventListener('click', dismiss);
-    window.setTimeout(dismiss, 5000);
+    window.setTimeout(dismiss, toast.classList.contains('is-error') ? 7000 : 5000);
 })();

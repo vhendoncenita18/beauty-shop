@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Beauty Shop | Everyday care, thoughtfully chosen';
+$pageTitle = 'Alura | Everyday care, thoughtfully chosen';
 $catalogUrl = 'catalog/index.php';
 require __DIR__ . '/../app/includes/site-header.php';
 ?>
@@ -16,7 +16,7 @@ require __DIR__ . '/../app/includes/site-header.php';
             <div class="hero-note"><span class="note-line" aria-hidden="true"></span><span>Simple rituals. Considered essentials.</span></div>
         </div>
         <div class="hero-art">
-            <img src="../assets/images/hero-beauty.jpg" alt="Beauty products arranged in warm natural light">
+            <img src="../assets/images/hero-beauty.jpg" alt="Model holding a beauty product in warm natural light">
             <div class="image-caption"><span>YOUR DAILY RITUAL</span><span>01 / CARE</span></div>
             <div class="hero-stamp" aria-hidden="true"><span>made for</span><strong>you</strong></div>
         </div>

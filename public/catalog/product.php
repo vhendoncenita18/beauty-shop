@@ -9,7 +9,7 @@ $user = current_user();
 $isUser = ($user['role'] ?? '') === 'user';
 $userId = $isUser ? filter_var($user['id'] ?? null, FILTER_VALIDATE_INT) : false;
 $productId = filter_var($_GET['id'] ?? null, FILTER_VALIDATE_INT);
-$pageTitle = 'Product details | Beauty Shop';
+$pageTitle = 'Product details | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '..';
 $catalogUrl = 'index.php';
@@ -64,7 +64,7 @@ if ($productId !== false && $productId > 0) {
 }
 
 if ($product !== null) {
-    $pageTitle = $product['name'] . ' | Beauty Shop';
+    $pageTitle = $product['name'] . ' | Alura';
 }
 require __DIR__ . '/../../app/includes/site-header.php';
 ?>
@@ -82,7 +82,7 @@ require __DIR__ . '/../../app/includes/site-header.php';
                     <?php if ($imageUrl !== null): ?>
                         <img src="<?= htmlspecialchars($imageUrl, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?>">
                     <?php else: ?>
-                        <div class="product-image-placeholder" aria-hidden="true">Beauty Shop</div>
+                        <div class="product-image-placeholder" aria-hidden="true">Alura</div>
                     <?php endif; ?>
                 </div>
                 <div class="product-detail-copy">

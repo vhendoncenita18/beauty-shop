@@ -6,7 +6,7 @@ require_admin('../../public/login.php');
 require_once __DIR__ . '/../../app/config/database.php';
 require_once __DIR__ . '/../../app/services/admin_catalog.php';
 
-$pageTitle = 'Manage categories | Beauty Shop';
+$pageTitle = 'Manage categories | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '../../public';
 $catalogUrl = '../../public/catalog/index.php';

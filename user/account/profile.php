@@ -14,7 +14,7 @@ if (($user['role'] ?? '') !== 'user' || !isset($user['id'])) {
     exit('Access denied.');
 }
 
-$pageTitle = 'My profile | Beauty Shop';
+$pageTitle = 'My profile | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '../../public';
 $catalogUrl = '../../public/catalog/index.php';
@@ -142,7 +142,7 @@ require __DIR__ . '/../../app/includes/site-header.php';
             <section class="profile-card profile-main-card" aria-labelledby="personal-details-title">
                 <header class="profile-identity">
                     <span class="profile-avatar" aria-hidden="true"><?= htmlspecialchars($profileInitials, ENT_QUOTES, 'UTF-8') ?></span>
-                    <div><p class="eyebrow">Personal profile</p><h2><?= htmlspecialchars(trim(implode(' ', array_filter([$formValues['first_name'], $formValues['middle_name'], $formValues['last_name']]))), ENT_QUOTES, 'UTF-8') ?></h2><span>Beauty Shop customer</span></div>
+                    <div><p class="eyebrow">Personal profile</p><h2><?= htmlspecialchars(trim(implode(' ', array_filter([$formValues['first_name'], $formValues['middle_name'], $formValues['last_name']]))), ENT_QUOTES, 'UTF-8') ?></h2><span>Alura customer</span></div>
                 </header>
                 <div class="profile-card-heading"><div><p class="eyebrow">Your information</p><h3 id="personal-details-title">Personal details</h3></div><span class="profile-edit-label">Edit details</span></div>
                 <?php if ($profileError !== ''): ?><p class="form-status" role="alert"><?= htmlspecialchars($profileError, ENT_QUOTES, 'UTF-8') ?></p><?php endif; ?>

@@ -9,7 +9,7 @@ require_once __DIR__ . '/../../app/services/pickup_orders.php';
 $adminId = filter_var(current_user()['id'] ?? null, FILTER_VALIDATE_INT);
 $orderId = filter_var($_GET['id'] ?? null, FILTER_VALIDATE_INT);
 $isModal = ($_GET['modal'] ?? '') === '1';
-$pageTitle = 'Review pickup order | Beauty Shop';
+$pageTitle = 'Review pickup order | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '../../public';
 $catalogUrl = '../../public/catalog/index.php';

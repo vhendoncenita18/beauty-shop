@@ -74,7 +74,7 @@ try {
     $dashboardDataError = true;
 }
 
-$pageTitle = 'Your account | Beauty Shop';
+$pageTitle = 'Your account | Alura';
 $assetBasePath = '../assets';
 $publicBasePath = '../public';
 $catalogUrl = '../public/catalog/index.php';
@@ -152,7 +152,7 @@ require __DIR__ . '/../app/includes/site-header.php';
                             <?php $itemImage = product_image_url($item['image_path'] ?? null, '../'); ?>
                             <a class="dashboard-product-card" href="<?= htmlspecialchars($catalogUrl, ENT_QUOTES, 'UTF-8') ?>?q=<?= rawurlencode((string) $item['name']) ?>" aria-label="Browse <?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') ?>">
                                 <span class="dashboard-product-visual">
-                                    <?php if ($itemImage !== null): ?><img src="<?= htmlspecialchars($itemImage, ENT_QUOTES, 'UTF-8') ?>" alt="" loading="lazy"><?php else: ?><span class="dashboard-product-placeholder" aria-hidden="true">Beauty Shop</span><?php endif; ?>
+                                    <?php if ($itemImage !== null): ?><img src="<?= htmlspecialchars($itemImage, ENT_QUOTES, 'UTF-8') ?>" alt="" loading="lazy"><?php else: ?><span class="dashboard-product-placeholder" aria-hidden="true">Alura</span><?php endif; ?>
                                     <?php if (!empty($item['category_name'])): ?><span class="dashboard-product-category"><?= htmlspecialchars($item['category_name'], ENT_QUOTES, 'UTF-8') ?></span><?php endif; ?>
                                 </span>
                                 <span class="dashboard-product-info"><strong><?= htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') ?></strong><span><?= htmlspecialchars(format_php_price((string) $item['price']), ENT_QUOTES, 'UTF-8') ?></span><?php if (isset($item['units_sold'])): ?><small><?= (int) $item['units_sold'] ?> sold</small><?php endif; ?></span>

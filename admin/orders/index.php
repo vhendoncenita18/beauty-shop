@@ -6,7 +6,7 @@ require_admin('../../public/login.php');
 require_once __DIR__ . '/../../app/config/database.php';
 require_once __DIR__ . '/../../app/services/pickup_orders.php';
 
-$pageTitle = 'Pickup orders | Beauty Shop';
+$pageTitle = 'Pickup orders | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '../../public';
 $catalogUrl = '../../public/catalog/index.php';

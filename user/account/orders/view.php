@@ -21,7 +21,7 @@ if ($userId === false || $userId < 1) {
     exit('Access denied.');
 }
 
-$pageTitle = 'Order details | Beauty Shop';
+$pageTitle = 'Order details | Alura';
 $assetBasePath = '../../../assets';
 $publicBasePath = '../../../public';
 $catalogUrl = '../../../public/catalog/index.php';
@@ -96,7 +96,7 @@ if ($pageError === '' && $orderId !== false && $orderId > 0) {
             );
             $historyStatement->execute(['order_id' => $orderId]);
             $history = $historyStatement->fetchAll();
-            $pageTitle = 'Order #' . (int) $orderId . ' | Beauty Shop';
+            $pageTitle = 'Order #' . (int) $orderId . ' | Alura';
         }
     } catch (Throwable $error) {
         error_log('User pickup order details could not be loaded.');

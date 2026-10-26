@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../app/auth/auth.php';
 require_once __DIR__ . '/../app/auth/login_redirect.php';
 
-$pageTitle = 'Log in | Beauty Shop';
+$pageTitle = 'Log in | Alura';
 $email = '';
 $loginError = '';
 $successMessage = ($_GET['registered'] ?? '') === '1' ? 'Your account was created. You can log in now.' : '';
@@ -34,11 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+$errorMessage = $loginError;
 $showSiteHeader = false;
 require __DIR__ . '/../app/includes/site-header.php';
 ?>
-<main id="main" class="auth-page">
-    <section class="auth-aside auth-aside-login" aria-label="Beauty Shop">
+<main id="main" class="auth-page login-page">
+    <section class="auth-aside auth-aside-login" aria-label="Alura">
         <img src="../assets/images/account-care.jpg" alt="A calm beauty routine with skincare essentials">
         <div class="auth-aside-copy"><p class="eyebrow">A moment for yourself</p><p class="auth-quote">“The best routine is the one that feels like yours.”</p></div>
     </section>
@@ -53,13 +54,10 @@ require __DIR__ . '/../app/includes/site-header.php';
                 <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
                 <div class="label-row"><label for="password">Password</label></div>
                 <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
-                <?php if ($loginError !== ''): ?>
-                    <p class="form-status" role="alert"><?= htmlspecialchars($loginError, ENT_QUOTES, 'UTF-8') ?></p>
-                <?php endif; ?>
                 <input type="hidden" name="_csrf" value="<?= htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8') ?>">
                 <button class="button button-full" type="submit">Log in</button>
             </form>
-            <p class="auth-switch">New to Beauty Shop? <a href="register.php">Create an account</a></p>
+            <p class="auth-switch">New to Alura? <a href="register.php">Create an account</a></p>
         </div>
     </section>
 </main>

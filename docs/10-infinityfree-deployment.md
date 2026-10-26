@@ -19,7 +19,9 @@ Record the date, source and observed result for supported PHP version/extensions
 
 - Separate local and production settings; use actual hosted DB values, never assume `localhost` for production.
 - Keep credentials outside source control and public paths where possible. If the host cannot provide private configuration, document the safest verified alternative and its trade-offs before proceeding.
-- Identify the public web root and protect `app/config`, logs, migration files and uploaded images. Do not assume the proposed directory layout is private on shared hosting.
+- The application currently keeps `public/`, `admin/` and `user/` at the project root because all three contain web routes. Upload the project contents under `htdocs` without uploading the local `.env`, `.git/`, or `.agents/`. The root `.htaccess` redirects `/` into `/public/`, preserves the local `/beauty-shop` redirect, and denies web requests to `app/`, `database/`, `docs/`, `tests/`, `.git/` and `.agents/`; verify these behaviors on the actual account before opening the site publicly.
+- Create a new root `.env` on the host from `.env.example`, replace every local database value with the values shown under the account's Current Databases, and never publish or share the completed file. Keep uploaded product images under `uploads/products/`; verify its existing execution-blocking `.htaccess` on the host.
+- Do not assume the proposed directory layout is private on shared hosting. Verify that direct requests for `/app/config/database.php`, `/database/migrations/001_create_users.sql`, `/docs/`, `/tests/` and `/.env` are denied, while `/`, `/public/login.php`, `/admin/` and `/user/` behave as intended.
 - Configure production error handling and HTTPS-aware cookies to match verified settings.
 
 ## D. Database and upload deployment

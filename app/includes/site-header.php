@@ -41,16 +41,17 @@ $cartCount = isset($_SESSION['cart']) && is_array($_SESSION['cart'])
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fbf7f4">
-    <title><?= htmlspecialchars($pageTitle ?? 'Beauty Shop', ENT_QUOTES, 'UTF-8') ?></title>
+    <title><?= htmlspecialchars($pageTitle ?? 'Alura', ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="<?= htmlspecialchars($assetBasePath, ENT_QUOTES, 'UTF-8') ?>/css/styles.css">
+    <link rel="icon" type="image/png" sizes="64x64" href="<?= htmlspecialchars($assetBasePath, ENT_QUOTES, 'UTF-8') ?>/images/alura-favicon.png">
 </head>
 <body<?= isset($bodyClass) && $bodyClass !== '' ? ' class="' . htmlspecialchars($bodyClass, ENT_QUOTES, 'UTF-8') . '"' : '' ?>>
 <a class="skip-link" href="#main">Skip to content</a>
 <?php if (($showSiteHeader ?? true) === true): ?>
 <header class="site-header">
-    <a class="brand" href="<?= htmlspecialchars($headerHomeUrl, ENT_QUOTES, 'UTF-8') ?>" aria-label="Beauty Shop home">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span>Beauty <span class="brand-light">Shop</span></span>
+    <a class="brand" href="<?= htmlspecialchars($headerHomeUrl, ENT_QUOTES, 'UTF-8') ?>" aria-label="Alura home">
+        <img class="brand-logo" src="<?= htmlspecialchars($assetBasePath, ENT_QUOTES, 'UTF-8') ?>/images/alura-logo.png" alt="" aria-hidden="true" width="42" height="42">
+        <span class="brand-name">Alura</span>
     </a>
     <?php if (($userDashboardHeader ?? false) === true): ?>
         <div class="dashboard-header-actions">

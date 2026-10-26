@@ -20,7 +20,7 @@ if ($userId === false || $userId < 1) {
     exit('Access denied.');
 }
 
-$pageTitle = 'My pickup orders | Beauty Shop';
+$pageTitle = 'My pickup orders | Alura';
 $assetBasePath = '../../../assets';
 $publicBasePath = '../../../public';
 $catalogUrl = '../../../public/catalog/index.php';

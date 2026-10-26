@@ -2,4 +2,16 @@
     Require all denied
 </FilesMatch>
 
+<FilesMatch "^(?:\.gitignore|AGENTS\.md|README\.md)$">
+    Require all denied
+</FilesMatch>
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(?:app|database|docs|tests|\.git|\.agents)(?:/|$) - [F,L,NC]
+    RewriteRule ^$ public/ [R=302,L]
+</IfModule>
+
 RedirectMatch 302 ^/beauty-shop/?$ /beauty-shop/public/

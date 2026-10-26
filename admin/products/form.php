@@ -10,7 +10,7 @@ require_once __DIR__ . '/../../app/services/pickup_orders.php';
 $productId = filter_var($_GET['id'] ?? null, FILTER_VALIDATE_INT);
 $productId = $productId === false || $productId < 1 ? null : $productId;
 $isModal = $productId === null && ($_GET['modal'] ?? '') === '1';
-$pageTitle = $productId === null ? 'Add product | Beauty Shop' : 'Edit product | Beauty Shop';
+$pageTitle = $productId === null ? 'Add product | Alura' : 'Edit product | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '../../public';
 $catalogUrl = '../../public/catalog/index.php';

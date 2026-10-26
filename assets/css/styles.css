@@ -94,6 +94,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .cart-drawer-dialog .form-status { margin: 12px 26px 0; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--serif); font-size: 22px; letter-spacing: -.7px; }
 .brand-mark { display: grid; width: 31px; height: 31px; place-items: center; border: 1px solid var(--rose); border-radius: 50%; color: var(--rose); font-size: 17px; font-style: italic; }
+.brand-logo { width: 42px; height: 42px; flex: 0 0 auto; object-fit: contain; }
+.brand-name { color: var(--ink); font-size: 23px; font-weight: 500; letter-spacing: .015em; }
 .brand-light { color: var(--rose); font-style: italic; }
 .main-nav, .header-actions { display: flex; align-items: center; gap: 31px; }
 .header-actions form { margin: 0; }
@@ -123,7 +125,7 @@ h1, h2, p { margin-top: 0; }
 .hero-note { margin-top: 52px; display: flex; align-items: center; gap: 11px; color: #88746d; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
 .note-line { width: 35px; height: 1px; background: var(--rose); }
 .hero-art { position: relative; height: 445px; background: var(--rose-pale); }
-.hero-art > img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.hero-art > img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 24%; }
 .image-caption { position: absolute; right: 0; bottom: 0; left: 0; padding: 14px 17px; display: flex; justify-content: space-between; background: rgba(48, 37, 34, .7); color: white; font-size: 9px; letter-spacing: .14em; }
 .hero-stamp { position: absolute; top: 28px; right: -27px; width: 91px; height: 91px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50%; background: var(--white); color: var(--rose); transform: rotate(9deg); }
 .hero-stamp span { font-family: var(--serif); font-size: 12px; font-style: italic; }
@@ -137,7 +139,10 @@ h1, h2, p { margin-top: 0; }
 .section-heading > p { max-width: 295px; margin: 0 0 4px; color: var(--ink-soft); font-size: 12px; }
 .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
 .category-card { position: relative; height: 300px; overflow: hidden; background: var(--cream); text-decoration: none; }
-.category-card img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .35s ease; }
+.category-card img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 24%; transition: transform .35s ease; }
+.category-card:nth-child(1) img { object-position: center 27%; }
+.category-card:nth-child(2) img { object-position: center 24%; }
+.category-card:nth-child(3) img { object-position: center 30%; }
 .category-card:hover img { transform: scale(1.035); }
 .category-number { position: absolute; top: 14px; left: 15px; color: white; font-size: 10px; letter-spacing: .1em; }
 .category-label { position: absolute; right: 0; bottom: 0; left: 0; padding: 18px 16px; display: flex; justify-content: space-between; background: linear-gradient(transparent, rgba(25, 18, 16, .62)); color: white; font-family: var(--serif); font-size: 22px; }
@@ -150,19 +155,62 @@ h1, h2, p { margin-top: 0; }
 .account-invite h2 { max-width: 510px; }
 .site-footer { min-height: 82px; padding: 15px 7%; display: flex; align-items: center; justify-content: space-between; gap: 14px; border-top: 1px solid var(--line); }
 .brand-footer { font-size: 16px; }
-.brand-footer .brand-mark { width: 24px; height: 24px; font-size: 13px; }
+.brand-footer .brand-logo { width: 30px; height: 30px; }
+.brand-footer .brand-name { font-size: 18px; }
 .site-footer p, .site-footer small { margin: 0; color: var(--ink-soft); font-size: 10px; }
 
 .auth-page { min-height: calc(100vh - 125px); display: grid; grid-template-columns: 1fr 1fr; }
 .register-page { min-height: calc(100vh - 125px); }
 .auth-aside { position: relative; min-height: 620px; overflow: hidden; background: var(--rose-pale); }
 .auth-aside > img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+.auth-aside-register > img { object-fit: cover; object-position: 43% center; }
 .auth-aside::after { position: absolute; inset: 45% 0 0; content: ""; background: linear-gradient(transparent, rgba(35, 24, 21, .68)); }
 .auth-aside-copy { position: absolute; z-index: 1; right: 9%; bottom: 9%; left: 9%; color: white; }
 .auth-aside-copy .eyebrow { color: #f0dcd3; }
 .auth-quote { max-width: 460px; margin: 0; font-family: var(--serif); font-size: clamp(30px, 4vw, 46px); line-height: 1.16; }
 .auth-panel { display: grid; place-items: center; padding: 48px 8%; background: var(--paper); }
 .auth-content { width: min(100%, 390px); }
+.login-page .auth-panel { background: radial-gradient(ellipse at 80% 18%, #f3e8e2 0, var(--paper) 48%); }
+.login-page .auth-content { width: min(100%, 420px); }
+.login-page .back-link { margin-bottom: 42px; letter-spacing: .02em; }
+.login-page .auth-content > .eyebrow { margin-bottom: 10px; color: var(--rose-deep); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.login-page .auth-content h1 { margin-bottom: 11px; font-size: clamp(46px, 5.4vw, 64px); letter-spacing: -.055em; line-height: 1.02; }
+.login-page .auth-intro { max-width: 340px; margin-bottom: 34px; font-size: 14px; line-height: 1.7; }
+.login-page .auth-form { gap: 12px; }
+.login-page .auth-form label { margin-top: 3px; font-size: 12px; letter-spacing: .01em; }
+.login-page .auth-form input { height: 52px; padding-inline: 15px; border-color: #d9c9c1; border-radius: 10px; font-size: 14px; transition: border-color .18s ease, box-shadow .18s ease; }
+.login-page .auth-form input:focus-visible { border-color: var(--rose); box-shadow: 0 0 0 4px rgba(156, 98, 88, .12); }
+.login-page .auth-form .button { min-height: 50px; margin-top: 8px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: .02em; }
+.login-page .auth-switch { margin-top: 20px; font-size: 13px; }
+.register-page .auth-panel { background: radial-gradient(ellipse at 18% 12%, #f3e8e2 0, var(--paper) 48%); }
+.register-page .register-content { width: min(100%, 500px); }
+.register-page .register-content > .eyebrow { margin-bottom: 9px; color: var(--rose-deep); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.register-page .register-content h1 { margin-bottom: 10px; font-size: clamp(42px, 4.5vw, 56px); letter-spacing: -.05em; line-height: 1.02; }
+.register-page .register-content .auth-intro { max-width: 390px; margin-bottom: 22px; font-size: 13px; line-height: 1.65; }
+.register-page .register-form { gap: 13px 16px; }
+.register-page .register-form .register-field { gap: 6px; }
+.register-page .register-form label { color: var(--ink); font-size: 12px; letter-spacing: .01em; }
+.register-page .register-form input { height: 46px; padding-inline: 13px; border-color: #d9c9c1; border-radius: 9px; color: var(--ink); font-size: 13px; }
+.register-page .register-form input:focus-visible { border-color: var(--rose); box-shadow: 0 0 0 4px rgba(156, 98, 88, .12); }
+.register-page .register-form .field-help { font-size: 10px; line-height: 1.5; }
+.register-page .register-form .button { min-height: 48px; margin-top: 3px; border-radius: 999px; font-size: 13px; font-weight: 600; letter-spacing: .02em; }
+.register-page .auth-switch { margin-top: 17px; font-size: 13px; }
+@media (min-width: 621px) {
+    .register-page { min-height: calc(100vh - 82px); min-height: calc(100dvh - 82px); }
+    .register-page .auth-aside { min-height: 0; }
+    .register-page .auth-panel { padding: 14px 5%; }
+    .register-page .register-content .back-link { margin-bottom: 10px; }
+    .register-page .register-content > .eyebrow { margin-bottom: 5px; }
+    .register-page .register-content h1 { margin-bottom: 6px; font-size: clamp(36px, 3.5vw, 46px); }
+    .register-page .register-content .auth-intro { margin-bottom: 12px; font-size: 12px; }
+    .register-page .register-form { gap: 7px 12px; }
+    .register-page .register-form .register-field { gap: 3px; }
+    .register-page .register-form label { font-size: 11px; }
+    .register-page .register-form input { height: 38px; font-size: 12px; }
+    .register-page .register-form .field-help { font-size: 9px; }
+    .register-page .register-form .button { min-height: 40px; margin-top: 0; }
+    .register-page .auth-switch { margin-top: 9px; font-size: 12px; }
+}
 .register-content { width: min(100%, 470px); }
 .register-content .back-link { margin-bottom: 20px; }
 .register-content h1 { margin-bottom: 8px; font-size: clamp(36px, 4vw, 46px); }
@@ -191,6 +239,7 @@ h1, h2, p { margin-top: 0; }
 .auth-form input::placeholder { color: #a1918b; }
 .form-status { margin: 9px 0 2px; padding: 11px 12px; border-left: 2px solid var(--rose); background: #f3e9e4; color: #604c45; font-size: 11px; }
 .toast-message { position: fixed; z-index: 20; top: 24px; right: 24px; max-width: min(420px, calc(100vw - 32px)); padding: 14px 16px; display: flex; align-items: center; gap: 18px; border: 1px solid var(--line); border-left: 4px solid var(--rose-deep); border-radius: 10px; background: var(--white); box-shadow: 0 12px 32px rgba(48, 37, 34, .16); color: var(--ink); font-size: 13px; }
+.toast-message.is-error { border-left-color: #a6423d; }
 .toast-close { padding: 0 2px; border: 0; background: transparent; color: var(--ink-soft); font-size: 20px; line-height: 1; }
 .toast-message.is-dismissing { opacity: 0; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease; }
 .button-full { width: 100%; margin-top: 5px; }
@@ -961,8 +1010,9 @@ body.product-form-modal .product-editor-form { margin-top: 0; }
     .announcement-grid { grid-template-columns: 1fr; }
     .dashboard-section { margin-top: 30px; }
     .register-page { min-height: auto; }
-    .register-page .auth-aside { height: 180px; min-height: 180px; max-height: 180px; }
-    .register-page .auth-panel { padding: 28px 8% 36px; }
+    .register-page .auth-aside { height: 180px; min-height: 180px; max-height: 180px; aspect-ratio: auto; }
+    .auth-aside-register > img { object-position: center 22%; }
+    .register-page .auth-panel { padding: 18px 8% 24px; }
     .auth-aside { min-height: 250px; max-height: 250px; }
     .auth-aside-copy { right: 7%; bottom: 7%; left: 7%; }
     .auth-quote { max-width: 330px; font-size: 30px; }
@@ -985,7 +1035,7 @@ body.product-form-modal .product-editor-form { margin-top: 0; }
     .catalog-page { padding: 36px 6% 52px; }
     .catalog-empty { padding: 25px 19px; }
     .profile-card { padding: 20px; }
-    .register-content .back-link { margin-bottom: 24px; }
+    .register-page .register-content .back-link { margin-bottom: 12px; }
     .back-link { margin-bottom: 34px; }
 }
 @media (max-width: 380px) {

@@ -7,7 +7,7 @@ require_once __DIR__ . '/../../app/config/database.php';
 require_once __DIR__ . '/../../app/services/admin_catalog.php';
 require_once __DIR__ . '/../../app/services/pickup_orders.php';
 
-$pageTitle = 'Manage products | Beauty Shop';
+$pageTitle = 'Manage products | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '../../public';
 $catalogUrl = '../../public/catalog/index.php';

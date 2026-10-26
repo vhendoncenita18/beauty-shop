@@ -10,7 +10,7 @@ $isUser = ($user['role'] ?? '') === 'user';
 $isAdmin = ($user['role'] ?? '') === 'admin';
 $useDashboardLayout = $isUser || $isAdmin;
 $userId = $isUser ? filter_var($user['id'] ?? null, FILTER_VALIDATE_INT) : false;
-$pageTitle = 'Shop beauty products | Beauty Shop';
+$pageTitle = 'Shop beauty products | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '..';
 $catalogUrl = 'index.php';
@@ -174,7 +174,7 @@ require __DIR__ . '/../../app/includes/site-header.php';
                                 <?php if ($imageUrl !== null): ?>
                                     <img class="product-card-image" src="<?= htmlspecialchars($imageUrl, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($product['name'], ENT_QUOTES, 'UTF-8') ?>" loading="lazy">
                                 <?php else: ?>
-                                    <span class="product-image-placeholder" aria-hidden="true">Beauty Shop</span>
+                                    <span class="product-image-placeholder" aria-hidden="true">Alura</span>
                                 <?php endif; ?>
                                 <?php if ($product['category_name'] !== null): ?><span class="product-category"><?= htmlspecialchars($product['category_name'], ENT_QUOTES, 'UTF-8') ?></span><?php endif; ?>
                             </span>

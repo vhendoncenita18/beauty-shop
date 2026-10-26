@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../app/auth/auth.php';
 require_once __DIR__ . '/../app/validation/user_profile.php';
 
-$pageTitle = 'Create an account | Beauty Shop';
+$pageTitle = 'Create an account | Alura';
 $firstName = '';
 $middleName = '';
 $lastName = '';
@@ -63,12 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+$errorMessage = $registerError;
 $showSiteHeader = false;
 require __DIR__ . '/../app/includes/site-header.php';
 ?>
 <main id="main" class="auth-page register-page">
-    <section class="auth-aside auth-aside-register" aria-label="Beauty Shop">
-        <img src="../assets/images/account-ritual.jpg" alt="Beauty products ready for a daily self-care ritual">
+    <section class="auth-aside auth-aside-register" aria-label="Alura">
+        <img src="../assets/images/account-ritual.jpg" alt="Close-up of a woman applying a skincare serum">
         <div class="auth-aside-copy"><p class="eyebrow">A little care, every day</p><p class="auth-quote">Find the essentials that make your routine feel like yours.</p></div>
     </section>
     <section class="auth-panel" aria-labelledby="register-title">
@@ -119,9 +120,6 @@ require __DIR__ . '/../app/includes/site-header.php';
                         </button>
                     </div>
                 </div>
-                <?php if ($registerError !== ''): ?>
-                    <p class="form-status register-field-full" role="alert"><?= htmlspecialchars($registerError, ENT_QUOTES, 'UTF-8') ?></p>
-                <?php endif; ?>
                 <input type="hidden" name="_csrf" value="<?= htmlspecialchars(csrf_token(), ENT_QUOTES, 'UTF-8') ?>">
                 <button class="button button-full register-field-full" type="submit">Create account</button>
             </form>

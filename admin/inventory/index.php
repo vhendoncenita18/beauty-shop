@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../app/services/admin_catalog.php';
 require_once __DIR__ . '/../../app/services/pickup_orders.php';
 
 $admin = current_user();
-$pageTitle = 'Inventory | Beauty Shop';
+$pageTitle = 'Inventory | Alura';
 $assetBasePath = '../../assets';
 $publicBasePath = '../../public';
 $catalogUrl = '../../public/catalog/index.php';
