@@ -1,0 +1,13 @@
+# Local environment settings (keep real credentials out of Git)
+.env
+.env.*
+!.env.example
+
+# Local-only application configuration and diagnostics
+app/config/database.local.php
+*.log
+
+# Local backups and uploaded product files
+/database/backups/
+/uploads/products/*
+!/uploads/products/.gitkeep
